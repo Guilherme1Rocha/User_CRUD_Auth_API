@@ -31,7 +31,6 @@ export const isAuthenticated = async(req: express.Request, res: express.Response
         if (!sessionToken) {
             return res.sendStatus(403);
         }
-        console.log('sessionToken from cookie:', sessionToken);
 
         const existingUser = await getUserBySessionToken(sessionToken)
 
